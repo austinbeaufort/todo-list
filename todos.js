@@ -1,31 +1,31 @@
-// VERSION 2 ------------------------------------------------------------------------
+//VERSION 3 ------------------------------------------------------------------------------------------------
 
-todos = ['item 1', 'item 2', 'item 3'];
+let todoList = {
+    todos: ['item 1', 'item 2', 'item 3'], 
 
-function displayTodos() {
-    console.log('My todos:', todos);
-}
+    displayTodos: function() {
+        console.log('My Todos:', this.todos);
+    }, 
 
-function addTodo(todo) {
-    todos.push(todo);
-    displayTodos();
-}
+    addTodo: function(todo) {
+        this.todos.push(todo);
+        this.displayTodos();
+    },
 
-function changeTodo(position, newValue) {
-    todos[position] = newValue;
-    displayTodos();
-}
+    changeTodo: function(position, newValue) {
+        this.todos[position] = newValue;
+        this.displayTodos();
+    }, 
 
-function deleteTodo(position) {
-    todos.splice(position, 1);
-    displayTodos();
-}
+    deleteTodo: function(position) {
+        this.todos.splice(position, 1);
+        this.displayTodos();
+    }
+};
 
 
 
-changeTodo(0, 'changed');
-changeTodo(0, 'changed again');
-deleteTodo(0);
-addTodo('be kind');
-addTodo('eat pizza');
-deleteTodo(2);
+todoList.displayTodos();
+todoList.addTodo('nom nom nom some food');
+todoList.changeTodo(1, 'run 10 miles');
+todoList.deleteTodo(2);
