@@ -1,4 +1,4 @@
-//VERSION 5 --------------------------------------------------------------------------------------------------
+//VERSION 6 --------------------------------------------------------------------------------------------------
 
 let todoList = {
     todos: [], 
@@ -8,7 +8,7 @@ let todoList = {
         if (this.todos.length === 0) {  
 
             console.log('Your todo list is empty!');
-            
+
         } else {
             console.log('My Todos:');
 
@@ -51,13 +51,41 @@ let todoList = {
         let todo = this.todos[position];
         todo.completed = !todo.completed;
         this.displayTodos();
+    },
+
+    toggleAll: function() {
+        let totalTodos = this.todos.length;
+        let completedTodos = 0;
+
+        for (let i = 0; i < totalTodos; i++) {
+            if (this.todos[i].completed === true) {
+                completedTodos++;
+            }
+        }
+                                                //IF EVERYTHING IS TRUE, MAKE EVERYTHING FALSE..
+        if (completedTodos === totalTodos) {
+            
+            for (let i = 0; i < totalTodos; i++) {
+                this.todos[i].completed = false;
+            } 
+            
+        } else {                                //OTHERWISE, MAKE EVERYTHING TRUE..  
+               
+                for (let i = 0; i < totalTodos; i++) {
+                   this.todos[i].completed = true;
+                }
+            }    
+        this.displayTodos();
     }
+
 };
 
 todoList.displayTodos();
 todoList.addTodo('visit Grandma');
 todoList.addTodo('Mow the Lawn');
 todoList.addTodo('Wash the Dishes');
-todoList.changeTodo(2, 'Break the Dishes');
-todoList.toggleCompleted(1);
 todoList.toggleCompleted(0);
+todoList.toggleCompleted(2);
+todoList.toggleAll();
+todoList.toggleAll();
+todoList.toggleAll();

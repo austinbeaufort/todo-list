@@ -40,3 +40,10 @@ V5 REQUIREMENTS
 => .displayTodos should show .todoText
 => .displayTodos should tell you if .todos is empty
 => .displayTodos should show .completed
+
+
+
+V6 REQUIREMENTS
+
+=> .toggleAll: If everything's true, make everything false.
+=> .toggleAll: Otherwise, make everything true.
