@@ -1,20 +1,31 @@
-//VERSION 1 ----------------------------------------------------------------------------
+// VERSION 2 ------------------------------------------------------------------------
 
-let todos = ['item 1', 'item 2', 'item 3'] //A list in JS is called an Array
+todos = ['item 1', 'item 2', 'item 3'];
 
-//add items
-todos.push('item 4');
-todos.push('item 5');
+function displayTodos() {
+    console.log('My todos:', todos);
+}
 
-//change items
-todos[0] = 'item 1 updated';
+function addTodo(todo) {
+    todos.push(todo);
+    displayTodos();
+}
 
-//deleting items
-todos.splice(0, 1);
-todos.splice(3, 1);
+function changeTodo(position, newValue) {
+    todos[position] = newValue;
+    displayTodos();
+}
+
+function deleteTodo(position) {
+    todos.splice(position, 1);
+    displayTodos();
+}
 
 
 
-
-
-console.log('My todos:', todos);
+changeTodo(0, 'changed');
+changeTodo(0, 'changed again');
+deleteTodo(0);
+addTodo('be kind');
+addTodo('eat pizza');
+deleteTodo(2);
