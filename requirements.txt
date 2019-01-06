@@ -1,0 +1,34 @@
+V1 REQUIREMENTS
+
+=> Should have a place to store todos
+=> Should have a way to display todos
+=> Should have a way to add new todos
+=> Should have a way to change a todo
+=> Should have a way to delete a todo
+
+
+
+V2 REQUIREMENTS
+
+=> It should have a function to display todos
+=> It should have a function to add todos
+=> It should have a function to change todos
+=> It should have a function to delete todos
+
+
+
+V3 REQUIREMENTS
+
+=> It should store the todos array on an object
+=> It should have a displayTodos method
+=> It should have an addTodos method
+=> It should have a changeTodo method
+=> It should have a deleteTodo method
+
+
+
+V4 REQUIREMENTS
+
+=> todoList.addTodo should add objects
+=> todoList.changeTodo should change the todoText properly
+=> todoList.toggleCompleted should change the completed property
