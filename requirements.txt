@@ -32,3 +32,11 @@ V4 REQUIREMENTS
 => todoList.addTodo should add objects
 => todoList.changeTodo should change the todoText properly
 => todoList.toggleCompleted should change the completed property
+
+
+
+V5 REQUIREMENTS
+
+=> .displayTodos should show .todoText
+=> .displayTodos should tell you if .todos is empty
+=> .displayTodos should show .completed

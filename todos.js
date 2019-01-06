@@ -1,10 +1,30 @@
-//VERSION 4 --------------------------------------------------------------------------------------------------
+//VERSION 5 --------------------------------------------------------------------------------------------------
 
 let todoList = {
     todos: [], 
 
     displayTodos: function() {
-        console.log('My Todos:', this.todos);
+        
+        if (this.todos.length === 0) {  
+
+            console.log('Your todo list is empty!');
+            
+        } else {
+            console.log('My Todos:');
+
+            for (let i = 0; i < this.todos.length; i++) {
+
+                if (this.todos[i].completed === false) {
+
+                    console.log('( )', this.todos[i].todoText);
+
+                } else {
+
+                    console.log('(x)', this.todos[i].todoText);
+
+                }
+            }
+        }
     }, 
 
     addTodo: function(todoText) {
@@ -34,6 +54,7 @@ let todoList = {
     }
 };
 
+todoList.displayTodos();
 todoList.addTodo('visit Grandma');
 todoList.addTodo('Mow the Lawn');
 todoList.addTodo('Wash the Dishes');
