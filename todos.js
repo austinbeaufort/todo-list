@@ -1,4 +1,4 @@
-//VERSION 6 --------------------------------------------------------------------------------------------------
+//VERSION 7 --------------------------------------------------------------------------------------------------
 
 let todoList = {
     todos: [], 
@@ -80,12 +80,17 @@ let todoList = {
 
 };
 
-todoList.displayTodos();
+let displayTodosButton = document.getElementById('displayTodosButton');
+
+displayTodosButton.addEventListener('click', function() {
+    todoList.displayTodos();
+});
+
+let toggleAllButton = document.getElementById('toggleAllButton');
+
+toggleAllButton.addEventListener('click', function() {
+    todoList.toggleAll();
+});
+
 todoList.addTodo('visit Grandma');
-todoList.addTodo('Mow the Lawn');
-todoList.addTodo('Wash the Dishes');
-todoList.toggleCompleted(0);
-todoList.toggleCompleted(2);
-todoList.toggleAll();
-todoList.toggleAll();
-todoList.toggleAll();
+todoList.addTodo('be kind to dear old Grandma');
