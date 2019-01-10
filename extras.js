@@ -1,23 +1,12 @@
-// VERSION 3 ----------------------------------------------------------------------
+// VERSION 4 ----------------------------------------------------------------------
 
-let students = ['jonathan', 'jenny', 'elliot'];
+// RETURNING VALUES
 
-function logName(name) {
-    console.log(name);
+
+function multiplyTwoNumbers(a, b) {
+    let result = a * b;
+    return result;
 }
 
+let theProductOf2And10 = multiplyTwoNumbers(2, 10);
 
-// LOGGING EACH STUDENT USING 'forEach' LOOP
-
-students.forEach(logName);    // takes the logName function as parameter.. () not needed.
-
-
-
-
-// CREATING OUR OWN 'forEach' FROM SCRATCH
-
-function forEach(myArray, myFunction) {
-    for (let i = 0; i < myArray.length; i++) {
-        myFunction(myArray[i]);
-    }
-}
