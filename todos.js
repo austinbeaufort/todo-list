@@ -1,4 +1,4 @@
-//VERSION 10 --------------------------------------------------------------------------------------------------
+//FINAL PRODUCT!!! --------------------------------------------------------------------------------------------------
 
 let todoList = {
     todos: [], 
@@ -28,24 +28,21 @@ let todoList = {
         let totalTodos = this.todos.length;
         let completedTodos = 0;
 
-        for (let i = 0; i < totalTodos; i++) {
-            if (this.todos[i].completed === true) {
+        this.todos.forEach(function(todo) {
+            if (todo.completed === true) {
                 completedTodos++;
             }
-        }
-                                                //IF EVERYTHING IS TRUE, MAKE EVERYTHING FALSE..
-        if (completedTodos === totalTodos) {
-            
-            for (let i = 0; i < totalTodos; i++) {
-                this.todos[i].completed = false;
-            } 
-            
-        } else {                                //OTHERWISE, MAKE EVERYTHING TRUE..  
-               
-                for (let i = 0; i < totalTodos; i++) {
-                   this.todos[i].completed = true;
+        });
+
+        this.todos.forEach(function(todo) {
+            //Case 1: If everythings true, make everything false
+            if (completedTodos === totalTodos) {
+                todo.completed = false;
+            //Case 2: Otherwise make everything true
+            } else {
+                todo.completed = true;
             }
-        }    
+        });
     }
 
 };
@@ -97,9 +94,8 @@ let view = {
         let todosUl = document.querySelector('ul');
         todosUl.innerHTML = '';
 
-        for (let i = 0; i < todoList.todos.length; i++) {
+        todoList.todos.forEach(function(todo, position) {
             let todoLi = document.createElement('li');
-            let todo = todoList.todos[i];
             let todoTextWithCompletion = '';
 
             if(todo.completed === true) {
@@ -108,11 +104,11 @@ let view = {
                 todoTextWithCompletion = '( ) ' + todo.todoText;
             }
 
-            todoLi.id = i;
+            todoLi.id = position;
             todoLi.textContent = todoTextWithCompletion;
             todoLi.appendChild(this.createDeleteButton());
             todosUl.appendChild(todoLi);
-        }
+        }, this);
     },
 
     createDeleteButton: function() {
