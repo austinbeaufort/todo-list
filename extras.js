@@ -1,30 +1,23 @@
-// VERSION 2 ----------------------------------------------------------------------
+// VERSION 3 ----------------------------------------------------------------------
+
+let students = ['jonathan', 'jenny', 'elliot'];
+
+function logName(name) {
+    console.log(name);
+}
 
 
-// CREATED A DEBUGGER FUNCTION TO USE IN CODE
+// LOGGING EACH STUDENT USING 'forEach' LOOP
 
-// function logTenNumbers() {
-//     for (let i = 0; i < 10; i++) {
-//         console.log(i);
-//     }
-// }
-
-// function runWithDebugger(ourFunction) {
-//     debugger;
-//     ourFunction();
-// }
+students.forEach(logName);    // takes the logName function as parameter.. () not needed.
 
 
 
 
+// CREATING OUR OWN 'forEach' FROM SCRATCH
 
-
-// TEXT BASED ALARM CLOCK!
-
-// function myTimer() {
-
-//     setTimeout(function() {
-//         console.log('Wake up Gordon!');
-//     }, 5000)
-    
-// }
+function forEach(myArray, myFunction) {
+    for (let i = 0; i < myArray.length; i++) {
+        myFunction(myArray[i]);
+    }
+}
